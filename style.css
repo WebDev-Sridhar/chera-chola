@@ -1,0 +1,491 @@
+*{
+    padding: 0;
+    margin:0 ;
+    box-sizing: border-box;
+
+}
+:root{
+    --nav-color:#0d692c;
+    --main-color:#fff;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow:hidden ;
+    background: linear-gradient(
+        to right,
+        #959409,
+        #d0f01c,
+        #958808
+    );
+}
+.banner .header{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 7px 4%;
+    z-index: 2;
+
+}
+.banner .header .logo{
+
+    font-size: 25px;
+    font-weight: 400;
+    font-family:"Lobster", sans-serif;
+    color:var(--main-color);
+    text-decoration: none;
+}
+
+.banner .header .navlist{
+    display: flex;
+    position: absolute;
+    right: 25%;
+
+    
+}
+.banner .header .navlist a{
+    font-size: 20px;
+    font-family: "Lobster", sans-serif;
+    font-family: 400;
+    letter-spacing: 1px;
+    margin-left: 60px;
+    list-style: none;
+    text-decoration: none;
+    color: var(--main-color);
+    transition: 0.5s;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+
+}
+.header .navlist a:hover{
+    border-bottom: 2px solid #fff;
+}
+
+.banner .header .h-btn{
+    display: flex;
+border: 2px solid #fff;
+color:var(--main-color);
+font-size: 15px;
+font-weight: 400;
+font-family: "poppins", sans-serif;
+padding: 5px 10px;
+border-radius: 10px;
+background-color: transparent;
+letter-spacing: 2px;
+cursor: pointer;
+transition: 0.5s;
+position: absolute;
+right: 8%;
+}
+
+.banner .header .h-btn:hover{
+    color: #000;
+    background-color: #fff;
+}
+.header #menu-icon{
+    font-size: 35px;
+    color:var(--main-color);
+    display: none;
+    
+}
+
+.banner .product{
+    width: 180px;
+    height: 400px;
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    transition: 0.7s;
+    --left:-130px;
+    display: flex;
+    /* border: 2px solid #000; */
+
+}
+.banner .product .soda{
+    background: 
+    var(--url)  var(--left) 0,
+    url(soda-mockup.png);
+    background-size: auto 100%;
+    width: 180px;
+    aspect-ratio: 2/4;
+    background-blend-mode:multiply;
+    mask-image: url(soda-mockup.png);
+    mask-size: auto 100%;
+    transition: 0.7s;
+    position: absolute;
+    left: 50%;
+    bottom: 2%;
+    transform: translateX(-50%);
+}
+.text{
+    display: inline-block;
+    position: absolute;
+    width: 450px;
+    height: 400px;
+    top:20%;
+    left:1%;
+    z-index:1;
+
+}
+.text h1{
+    font-size: 60px;
+    font-weight: 600;
+    font-family:"Lobster", sans-serif;
+    color:var(--main-color);
+    line-height: 4rem;
+    letter-spacing: 1px;
+}
+
+.text h2{
+    font-size: 30px;
+    font-weight: 800;
+    font-family: "Playwrite CL", cursive;
+    color:var(--nav-color);
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px;
+    animation: typing 2s infinite ,
+    cursor .4s step-end alternate infinite;
+    animation-delay: 2s;
+}
+@keyframes cursor{
+    70%{
+        border-color: transparent;
+    }
+}
+@keyframes typing{
+    from{
+        width: 0;
+    }
+}
+.text p{
+    font-size: 20px;
+    font-family: "Caveat", cursive;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: var(--main-color);
+}
+.text .btn{
+    width: max-content;
+    height: 27px;
+    padding:20px 25px;
+    text-align: center;
+    display: flex;
+    position: relative;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    align-items: center;
+    top: 30px;
+    font-size: 15px;
+    font-family: 'poppins',sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: var(--main-color);
+    transition: 0.5s;
+    cursor: pointer;
+}
+.text .btn:hover{
+    transform: translateX(8px);
+    color: #000;
+    background-color:#fff;
+
+}
+ .product:hover {
+    --left:-900px;
+    transform: translateX(-50%) translateY(-80px);
+
+}
+.banner .product .soda:last-child{
+    opacity: 0;
+}
+.banner .product:hover .soda:last-child{
+    opacity: 1;
+    
+
+}
+:has(.product:hover) .banner{
+    background: linear-gradient(
+        to right,
+        #9a1900,
+        #b1273e,
+        #9a1900
+    );
+}
+.bg-img img{
+    position:absolute;
+    width: 400px;
+    height: 550px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .5s;
+}
+.bg-img img:nth-child(1){
+    position: absolute;
+    width: 350px;
+    height: 250px;
+    top: 67%;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(1px);
+}
+.bg-img img:nth-child(2){
+    position: absolute;
+    width: 280px;
+    height: 180px;
+    bottom: 10%;
+    left: 38%;
+    transform: translateX(-50%);
+    z-index: 21;
+}
+.bg-img img:nth-child(3){
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    bottom: 15%;
+    left: 36%;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+.bg-img img:nth-child(4){
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    bottom: 13%;
+    left: 60%;
+    transform: translateX(-50%);
+}
+.bg-img img:nth-child(5){
+    position: absolute;
+    width: 320px;
+    height: 200px;
+    bottom: 17%;
+    left: 63%;
+    transform: translateX(-50%);
+    opacity: 0;
+    z-index:1;
+}
+.bg-img img:nth-child(6){
+    position: absolute;
+    width:550px;
+    height: 250px;
+    bottom: 0%;
+    left: 12%;
+    opacity: 1;
+}
+.bg-img img:nth-child(7){
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    bottom:0%;
+    left: 90%;
+    opacity:1;
+}
+:has(.product:hover) img:nth-child(1){
+    transform: translateX(-50%) translateY(20px);
+    filter: blur(1px);
+}
+:has(.product:hover) img:nth-child(2){
+    filter: blur(5px);
+    opacity: 0;
+}
+:has(.product:hover) img:nth-child(4){
+    filter: blur(5px);
+    opacity: 0;
+}
+:has(.product:hover) img:nth-child(3){
+    opacity: 1;
+}
+:has(.product:hover) img:nth-child(5){
+    opacity: 1;
+}
+:has(.product:hover) img:nth-child(6){
+    transform: translateX(-60%) translateY(20px);
+}
+:has(.product:hover) img:nth-child(7){
+    transform: translateX(-40%) translateY(20px);
+}
+@media (max-width:420px){
+
+    .header .navlist{
+        position: absolute;
+        top: -500px;
+        flex-direction: column;
+        left: 0;
+        background: transparent;
+        backdrop-filter: blur(50px);
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        z-index:2;
+        transition: all 0.5s;
+    }
+    .header .navlist a{
+    position: relative;
+        padding: 12px 0;
+       left: -10%;
+       
+       
+    }
+  
+    .navlist.open{
+        top: 100%;
+    }
+    .banner .header .h-btn{
+        right: 20%;
+
+    }
+    .banner .header #menu-icon{
+        display: initial;
+    }
+    .text{
+        top: 12%;
+        min-width: 380px;
+    }
+    .text h1{
+    font-size: 50px;
+    line-height: 3rem;
+    }
+    .text p{
+        line-height: 1rem;
+    }
+    .text .btn{
+        padding: 10px  15px ;
+    }
+    .product{
+        max-width: 200px;
+        max-height: 300px;
+        box-shadow: 0px 0px 0px 0px rgb(83, 82, 82);
+    }
+    .banner .product .soda{
+        width: 150px;
+        aspect-ratio: 2/4;
+    }
+    .bg-img img{
+        position:absolute;
+        width: 400px;
+        height: 550px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: .5s;
+    }
+    .bg-img img:nth-child(1){
+        position: absolute;
+        width: 250px;
+        height: 150px;
+        top: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        filter: blur(1px);
+    }
+    .bg-img img:nth-child(2){
+        position: absolute;
+        width: 180px;
+        height: 100px;
+        bottom: 10%;
+        left: 28%;
+        transform: translateX(-50%);
+        z-index: 21;
+    }
+    .bg-img img:nth-child(3){
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        bottom: 15%;
+        left: 20%;
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    .bg-img img:nth-child(4){
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        bottom: 13%;
+        left: 75%;
+        transform: translateX(-50%);
+    }
+    .bg-img img:nth-child(5){
+        position: absolute;
+        width: 220px;
+        height: 150px;
+        bottom: 17%;
+        left: 70%;
+        transform: translateX(-50%);
+        opacity: 0;
+        z-index: 11;
+    }
+    .bg-img img:nth-child(6){
+        position: absolute;
+        width:350px;
+        height: 100px;
+        bottom: 0%;
+        left: 12%;
+        opacity: 1;
+    }
+    .bg-img img:nth-child(7){
+        position: absolute;
+        width: 350px;
+        height: 100px;
+        bottom:0%;
+        left: 90%;
+        opacity:1;
+    }
+    :has(.product:hover) img:nth-child(1){
+        transform: translateX(-50%) translateY(20px);
+        filter: blur(1px);
+    }
+    :has(.product:hover) img:nth-child(2){
+        filter: blur(5px);
+        opacity: 0;
+    }
+    :has(.product:hover) img:nth-child(4){
+        filter: blur(5px);
+        opacity: 0;
+    }
+    :has(.product:hover) img:nth-child(3){
+        opacity: 1;
+    }
+    :has(.product:hover) img:nth-child(5){
+        opacity: 1;
+    }
+    :has(.product:hover) img:nth-child(6){
+        transform: translateX(-60%) translateY(20px);
+    }
+    :has(.product:hover) img:nth-child(7){
+        transform: translateX(-40%) translateY(20px);
+    }
+    .product:hover {
+        --left:-800px;
+        transform: translateX(-50%) translateY(-60px);
+    
+    }
+    .banner{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow:hidden ;
+        background: linear-gradient(
+            to bottom,
+            #959409,
+            #d0f01c,
+            #958808
+        );
+    }
+        
+        :has(.product:hover) .banner{
+        background: linear-gradient(
+            to bottom,
+            #9a1900,
+            #b1273e,
+            #9a1900
+        );
+
+}
+    }
